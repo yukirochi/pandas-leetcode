@@ -1,0 +1,59 @@
+Pandas Insight Series 🔥
+Basic Attributes (Properties)
+df.shape -> Returns a tuple representing the dimensionality (rows, columns)
+df.size -> Returns the total number of elements in the DataFrame
+df.columns -> Returns the column labels
+df.index -> Returns the index (row labels)
+df.dtypes -> Returns the data type of each column
+
+Basic Methods (Actions)
+df.info() -> Prints a concise summary of the DataFrame including index and dtypes
+df.count() -> Counts non-NA cells for each column or row
+df.head(n) -> Returns the first n rows (default is 5)
+df.tail(n) -> Returns the last n rows (default is 5)
+df.describe() -> Generates descriptive statistics for numerical columns
+
+Selection by Label (loc)
+df.loc[rows, columns] -> Accesses a group of rows and columns by label(s) or a boolean array
+
+Dropping Data
+df.drop(columns=['col_name'], inplace=True) -> Removes specified columns (or rows). If inplace=False, returns a copy.
+
+Handling Missing Data
+df.isna() -> Detects missing values, returning a boolean DataFrame
+df.dropna() -> Removes rows (or columns) containing missing values
+df.fillna(value) -> Replaces missing values with a specified value or method
+
+Data Manipulation
+df.sort_values(by='column') -> Sorts the DataFrame by the values of a specific column
+df.rename(columns={'old': 'new'}) -> Alters axes labels (renames columns or index)
+df.astype(dtype) -> Casts the DataFrame (or Series) to a specified data type
+df.drop_duplicates() -> Returns a DataFrame with duplicate rows removed
+df.reset_index() -> Resets the index to the default integer index
+
+Grouping and Aggregation
+df.groupby('column') -> Groups data based on values in a column for aggregation
+df.value_counts() -> Returns a Series containing counts of unique values
+df.nunique() -> Counts number of distinct elements in specified axis
+df['col'].unique() -> Returns unique values of Series object
+
+Selection by Position (iloc)
+df.iloc[row_idx, col_idx] -> Purely integer-location based indexing for selection by position
+
+Merging and Joining
+pd.concat([df1, df2]) -> Concatenates pandas objects along a particular axis
+df.merge(df2, on='col', how='inner') -> Merges DataFrame objects with a database-style join
+pd.merge(df1, df2, left_on='col1', right_on='col2', how='outer') -> Merges DataFrames based on different columns
+
+Function Application
+df.apply(func) -> Applies a function along an axis of the DataFrame
+df.applymap(func) -> Applies a function to a Dataframe elementwise
+
+String Manipulation (Series)
+df['col'].str.contains('pattern') -> Tests if pattern or regex is contained within a string
+df['col'].str.lower() -> Converts strings in the Series to lowercase
+df['col'].str.replace('old', 'new') -> Replaces occurrences of pattern/regex with some other string
+
+Input/Output
+pd.read_csv('path') -> Reads a comma-separated values (csv) file into DataFrame
+df.to_csv('path') -> Writes object to a comma-separated values (csv) file
